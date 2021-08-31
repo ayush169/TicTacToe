@@ -1,7 +1,7 @@
 import React from "react";
 
-const StatusMessage = ({ winner, current }) => {
-  const noMovesLeft = current.board.every((el) => el !== null);
+const StatusMessage = ({ winner, current, noMovesLeft }) => {
+  // const noMovesLeft = current.board.every((el) => el !== null);
 
   return (
     <div className="status-message">
@@ -23,7 +23,7 @@ const StatusMessage = ({ winner, current }) => {
       )}
       {!winner && noMovesLeft && (
         <>
-          <span className="text-green">X</span>and{" "}
+          <span className="text-green">X</span> and{" "}
           <span className="text-orange">O</span> tied
         </>
       )}
