@@ -48,12 +48,18 @@ function App() {
     setCurrentMove(0);
   };
 
+  const noMovesLeft = current.board.every((el) => el !== null);
+
   return (
     <div className="app">
       <h1>
         TIC <span className="text-green">TAC</span> TOE
       </h1>
-      <StatusMessage winner={winner} current={current} />
+      <StatusMessage
+        winner={winner}
+        current={current}
+        noMovesLeft={noMovesLeft}
+      />
       <Board
         board={current.board}
         handleSquareClick={handleSquareClick}
@@ -62,7 +68,7 @@ function App() {
       <button
         type="button"
         onClick={onNewGame}
-        className={`btn-reset ${winner ? "active" : ""}`}
+        className={`btn-reset ${winner || noMovesLeft ? "active" : ""}`}
       >
         Start New Game
       </button>
