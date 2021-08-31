@@ -1,4 +1,4 @@
-# Demo:-
+# Demo
 alphatictactoe.surge.sh
 
 # Getting Started with Create React App
